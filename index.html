@@ -478,6 +478,110 @@
       line-height: 1;
     }
 
+        /* ===== LUGARES PARA VISITAR ===== */
+    #lugares {
+      padding: 100px 20px;
+      background: var(--beige);
+    }
+    
+    .lugares-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .lugar-card {
+      background: var(--blanco);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px var(--sombra);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    
+    .lugar-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px var(--sombra);
+    }
+    
+    .lugar-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .lugar-img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.7s ease;
+    }
+    
+    .lugar-card:hover .lugar-img { transform: scale(1.07); }
+    
+    .lugar-dist {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(90,122,90,0.9);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
+    
+    .lugar-body {
+      padding: 26px 26px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .lugar-icon { font-size: 1.6rem; margin-bottom: 2px; }
+    
+    .lugar-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--marron);
+      line-height: 1.3;
+    }
+    
+    .lugar-body p {
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+      line-height: 1.75;
+      flex: 1;
+    }
+    
+    .lugar-body p em {
+      font-style: italic;
+      color: var(--marron-claro);
+    }
+    
+    .lugar-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    
+    .lugar-tags span {
+      background: var(--verde-suave);
+      color: var(--verde);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 20px;
+    }
+    
     /* ===== UBICACIÓN ===== */
     #ubicacion {
       padding: 100px 20px;
@@ -1041,6 +1145,7 @@
       <li><a href="#galeria" onclick="closeMenu()">Galería</a></li>
       <li><a href="#ubicacion" onclick="closeMenu()">Ubicación</a></li>
       <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
+      <li><a href="#lugares" onclick="closeMenu()">Qué visitar</a></li>
       <li><a href="#tarifas" onclick="closeMenu()">Tarifas</a></li>
       <li><a href="https://wa.me/5492664000000?text=Hola!%20Me%20interesa%20reservar%20una%20cabaña%20en%20La%20Koslayna" target="_blank" class="nav-wa">📲 Reservar</a></li>
     </ul>
@@ -1139,10 +1244,16 @@
         <img src="images/matrimonial.png" alt="Habitación principal" loading="lazy" />
         <div class="g-item-overlay"><span>Dormitorio doble</span></div>
       </div>
+      
       <div class="g-item" data-cat="interior" onclick="openLightbox(this)">
         <img src="images/living.png" alt="Living" loading="lazy" />
         <div class="g-item-overlay"><span>Living</span></div>
       </div>
+      <div class="g-item" data-cat="interior" onclick="openLightbox(this)">
+         <img src="images/matrimonial.png" alt="Habitación principal" loading="lazy" />
+        <div class="g-item-overlay"><span>Dormitorio matrimonial</span></div>
+      </div>
+      
     </div>
   </section>
 
@@ -1308,6 +1419,154 @@
     </div>
   </section>
 
+  <!-- LUGARES PARA VISITAR -->
+<section id="lugares">
+  <div class="sec-wrapper reveal" style="text-align:center;margin-bottom:60px;padding:0 20px;">
+    <div class="sec-label">Explorá la región</div>
+    <h2 class="sec-title">Lugares para visitar desde La Koslayna</h2>
+    <p class="sec-text" style="max-width:680px;margin:0 auto;">La ubicación privilegiada de las cabañas te convierte en punto de partida ideal para descubrir algunos de los paisajes y destinos más fascinantes de San Luis.</p>
+  </div>
+  <div class="lugares-grid">
+
+    <div class="lugar-card reveal reveal-delay-1">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80')"></div>
+        <div class="lugar-dist">~100 km</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">🏜️</div>
+        <h3>Sierra de Las Quijadas</h3>
+        <p>Parque Nacional que fue habitat del pueblo Huarpe. Paisajes únicos de tonos rojizos en un entorno desértico, caminatas de distintas dificultades con guías entrenados y un patrimonio geológico y paleontológico de valor mundial que aún sigue siendo estudiado.</p>
+        <div class="lugar-tags">
+          <span>🦴 Paleontología</span>
+          <span>🚶 Senderismo</span>
+          <span>🌄 Naturaleza</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lugar-card reveal reveal-delay-2">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80')"></div>
+        <div class="lugar-dist">Pocos minutos</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">🏎️</div>
+        <h3>Circuito Potrero de los Funes</h3>
+        <p>La Quebrada de los Cóndores entre paredones graníticos conecta con el hermoso Lago Potrero. Allí encontrarás el Hotel Internacional con excelente gastronomía, el circuito internacional de automovilismo, el Paseo de los Artesanos y los miradores panorámicos.</p>
+        <div class="lugar-tags">
+          <span>🏁 Automovilismo</span>
+          <span>🛶 Lago</span>
+          <span>🎨 Artesanías</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lugar-card reveal reveal-delay-3">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&q=80')"></div>
+        <div class="lugar-dist">~80 km</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">⛏️</div>
+        <h3>La Carolina</h3>
+        <p>Viejo pueblo minero sobre las faldas del Cerro Tomolasta. Visitá la antigua mina, el Museo de la Poesía con más de 1700 manuscritos y las cenizas repatriadas del poeta Juan Crisóstomo Lafinur, nacido allí en 1797. Cerca, la impresionante Gruta de Inti Huasi guarda huellas de la prehistoria puntana.</p>
+        <div class="lugar-tags">
+          <span>📜 Historia</span>
+          <span>🪨 Grutas</span>
+          <span>🎭 Cultura</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lugar-card reveal reveal-delay-1">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=700&q=80')"></div>
+        <div class="lugar-dist">Circuito próximo</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">🌊</div>
+        <h3>Lagos y Sierras</h3>
+        <p>El Volcán, Estancia Grande, La Florida y El Trapiche: ríos, lagos y sierras para disfrutar en familia. En este recorrido encontrarás el Camino de las Pulperías y los diques Cruz de Piedra, Berta Vidal de Batini, La Florida y Esteban Agüero, con bicisendas ideales para ciclistas de todos los niveles.</p>
+        <div class="lugar-tags">
+          <span>🚴 Ciclismo</span>
+          <span>🏊 Diques</span>
+          <span>👨‍👩‍👧 Familias</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lugar-card reveal reveal-delay-2">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1609141064960-1984f9b5d3db?w=700&q=80')"></div>
+        <div class="lugar-dist">~30 km oeste</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">♨️</div>
+        <h3>Salinas y Aguas Termales</h3>
+        <p>Las Salinas del Bebedero deslumbran con su enorme desierto blanco de cloruro de sodio. En Balde y San Gerónimo encontrarás aguas termales ricas en minerales con virtudes terapéuticas reconocidas. El lugar perfecto para relajarse y renovar energías.</p>
+        <div class="lugar-tags">
+          <span>🧖 Termas</span>
+          <span>🏜️ Salinas</span>
+          <span>💆 Relax</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lugar-card reveal reveal-delay-3">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80')"></div>
+        <div class="lugar-dist">~18 km</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">🏛️</div>
+        <h3>Ciudad de La Punta</h3>
+        <p>Un emprendimiento único en el país con más de 4000 viviendas. Visitá el parque astronómico, la Universidad de La Punta, el Cabildo, la Casa de Tucumán, el Hipódromo, el estadio Juan Gilberto Funes y amplios espacios verdes.</p>
+        <div class="lugar-tags">
+          <span>🔭 Astronomía</span>
+          <span>🎓 Universidad</span>
+          <span>🌿 Parques</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lugar-card reveal reveal-delay-1">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=700&q=80')"></div>
+        <div class="lugar-dist">~50 km norte</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">🖼️</div>
+        <h3>Circuito del Norte</h3>
+        <p>Bordeando las Sierras por Autopista 25 de Mayo y RN146, descubrí pequeños parajes con pinturas rupestres, ranchos de adobe, viejas casonas e iglesias históricas. Un recorrido que invita a largas caminatas y paseos en bicicleta.</p>
+        <div class="lugar-tags">
+          <span>🗿 Rupestre</span>
+          <span>🚵 Bicicleta</span>
+          <span>📸 Fotografía</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lugar-card reveal reveal-delay-2">
+      <div class="lugar-img-wrap">
+        <div class="lugar-img" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=700&q=80')"></div>
+        <div class="lugar-dist">6 km</div>
+      </div>
+      <div class="lugar-body">
+        <div class="lugar-icon">🏙️</div>
+        <h3>Ciudad de San Luis</h3>
+        <p>A solo 6 km de las cabañas, fundada el 25 de agosto de 1594 por Luis Jofré de Loyasa y Meneses con el nombre de <em>"San Luis de Loyola Nueva Medina de Rio Seco"</em>. Historia, gastronomía, cultura y servicios, siempre cerca.</p>
+        <div class="lugar-tags">
+          <span>🎭 Cultura</span>
+          <span>🍽️ Gastronomía</span>
+          <span>🏛️ Historia</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
   <!-- CTA FINAL -->
   <section id="cta-final">
     <div class="cta-inner reveal">
@@ -1429,4 +1688,5 @@
   </script>
 </body>
 </html>
+
 

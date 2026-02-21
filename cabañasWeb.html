@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabañas La Koslayna | Juana Koslay, San Luis</title>
+  <meta name="description" content="Cabañas La Koslayna en Juana Koslay, San Luis. Escapate a la naturaleza con tu familia. A minutos de Potrero de los Funes, El Volcán y El Trapiche. WiFi, pileta, parque amplio." />
+  <meta name="keywords" content="cabañas Juana Koslay, cabañas San Luis, alojamiento Potrero de los Funes, cabañas cerca Potrero de los Funes, La Koslayna, turismo San Luis, cabañas familia San Luis" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Cabañas La Koslayna" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cabañas La Koslayna | Juana Koslay, San Luis" />
+  <meta property="og:description" content="Un lugar para desconectar del ruido y sentirse en familia. Cabañas amplias en entorno natural, a minutos de Potrero de los Funes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://cabaniaslakoslayna.com.ar/" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --verde: #5a7a5a;
+      --verde-claro: #8aab7c;
+      --verde-suave: #d6e8cc;
+      --beige: #f5ede0;
+      --beige-oscuro: #e8d8c0;
+      --marron: #7a5a3a;
+      --marron-claro: #b08860;
+      --tierra: #9c6b3c;
+      --blanco: #fdf9f4;
+      --texto: #3a2e22;
+      --texto-suave: #6b5940;
+      --sombra: rgba(90, 60, 30, 0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--blanco);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.5s, box-shadow 0.5s;
+    }
+
+    nav.scrolled {
+      background: rgba(253, 249, 244, 0.97);
+      box-shadow: 0 2px 20px var(--sombra);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--blanco);
+      text-decoration: none;
+      transition: color 0.4s;
+      letter-spacing: 0.5px;
+    }
+
+    nav.scrolled .nav-logo { color: var(--marron); }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav.scrolled .nav-links a { color: var(--texto-suave); }
+    .nav-links a:hover { color: var(--verde-claro) !important; }
+
+    .nav-wa {
+      background: #25D366;
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.8rem !important;
+    }
+
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 24px; height: 2px; background: white; display: block; transition: background 0.4s; }
+    nav.scrolled .hamburger span { background: var(--marron); }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(30,50,20,0.55) 0%,
+        rgba(60,40,20,0.25) 60%,
+        rgba(80,55,30,0.55) 100%
+      ),
+      url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80') center/cover no-repeat;
+      transform: scale(1.05);
+      transition: transform 8s ease-out;
+    }
+
+    .hero-bg.loaded { transform: scale(1); }
+
+    /* Overlay texture */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='60' height='60' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 0 20px;
+      max-width: 780px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      border-radius: 30px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.9s ease forwards 0.3s;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 22px;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards 0.6s;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #d4e8b8;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.88);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 44px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards 0.9s;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards 1.2s;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(37,211,102,0.45);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.6);
+      text-decoration: none;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: white;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite 2s;
+    }
+
+    .hero-scroll svg { opacity: 0.6; }
+
+    /* ===== SECCIÓN EXPERIENCIA ===== */
+    #experiencia {
+      padding: 110px 20px;
+      background: var(--blanco);
+      text-align: center;
+    }
+
+    .sec-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--verde);
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .sec-label::before, .sec-label::after {
+      content: '—';
+      color: var(--verde-claro);
+      margin: 0 10px;
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--marron);
+      line-height: 1.25;
+      margin-bottom: 28px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sec-text {
+      font-size: 1.05rem;
+      color: var(--texto-suave);
+      line-height: 1.85;
+      max-width: 660px;
+      margin: 0 auto 48px;
+    }
+
+    .pilares {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pilar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 160px;
+      padding: 30px 20px;
+      background: var(--beige);
+      border-radius: 16px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .pilar:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px var(--sombra);
+    }
+
+    .pilar-icon {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--verde-suave);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .pilar h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--marron);
+    }
+
+    .pilar p {
+      font-size: 0.85rem;
+      color: var(--texto-suave);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ===== GALERÍA ===== */
+    #galeria {
+      padding: 80px 20px;
+      background: var(--beige);
+    }
+
+    #galeria .sec-wrapper {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .gallery-tabs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .tab-btn {
+      padding: 10px 24px;
+      border-radius: 30px;
+      border: 2px solid var(--verde-claro);
+      background: transparent;
+      color: var(--verde);
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--verde);
+      color: white;
+      border-color: var(--verde);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid .g-item {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery-grid .g-item.large {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    .g-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+      display: block;
+    }
+
+    .g-item:hover img { transform: scale(1.06); }
+
+    .g-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(60,40,15,0.5) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+    }
+
+    .g-item:hover .g-item-overlay { opacity: 1; }
+
+    .g-item-overlay span {
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px; right: 28px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    /* ===== UBICACIÓN ===== */
+    #ubicacion {
+      padding: 100px 20px;
+      background: var(--blanco);
+    }
+
+    .ubicacion-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .ubicacion-text .sec-label { display: block; text-align: left; }
+    .ubicacion-text .sec-label::before { display: none; }
+
+    .ubicacion-text .sec-title { text-align: left; margin-left: 0; }
+
+    .ubicacion-text p {
+      font-size: 1rem;
+      color: var(--texto-suave);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .destinos {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .destino-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 18px;
+      background: var(--beige);
+      border-radius: 10px;
+      border-left: 4px solid var(--verde-claro);
+    }
+
+    .destino-item .ico { font-size: 1.2rem; }
+
+    .destino-item .info strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--marron);
+      font-weight: 700;
+    }
+
+    .destino-item .info span {
+      font-size: 0.8rem;
+      color: var(--texto-suave);
+    }
+
+    .mapa-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px var(--sombra);
+      height: 380px;
+    }
+
+    .mapa-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ===== SERVICIOS ===== */
+    #servicios {
+      padding: 100px 20px;
+      background: var(--verde);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #servicios::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    #servicios::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    #servicios .sec-wrapper {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    #servicios .sec-label { color: var(--verde-suave); }
+    #servicios .sec-label::before, #servicios .sec-label::after { color: rgba(255,255,255,0.4); }
+
+    #servicios .sec-title { color: white; }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .servicio-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .servicio-card:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-4px);
+    }
+
+    .servicio-card .s-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .servicio-card h4 {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.3;
+    }
+
+    /* ===== RESEÑAS ===== */
+    #resenas {
+      padding: 100px 20px;
+      background: var(--beige);
+    }
+
+    #resenas .sec-wrapper { text-align: center; margin-bottom: 60px; }
+
+    .resenas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .resena-card {
+      background: var(--blanco);
+      border-radius: 20px;
+      padding: 36px 30px;
+      position: relative;
+      box-shadow: 0 8px 30px var(--sombra);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .resena-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px var(--sombra);
+    }
+
+    .resena-card::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      color: var(--verde-suave);
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      line-height: 1;
+    }
+
+    .resena-estrellas {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 18px;
+    }
+
+    .resena-estrellas span {
+      color: #f5b942;
+      font-size: 1rem;
+    }
+
+    .resena-texto {
+      font-size: 0.97rem;
+      color: var(--texto-suave);
+      line-height: 1.8;
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+
+    .resena-autor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .resena-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--verde-suave);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--verde);
+      font-weight: bold;
+    }
+
+    .resena-autor-info strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--marron);
+      font-weight: 700;
+    }
+
+    .resena-autor-info span {
+      font-size: 0.78rem;
+      color: var(--texto-suave);
+    }
+
+    .booking-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+    }
+
+    .booking-badge strong { color: var(--marron); font-size: 1.1rem; }
+
+    /* ===== TARIFAS ===== */
+    #tarifas {
+      padding: 100px 20px;
+      background: var(--blanco);
+    }
+
+    #tarifas .sec-wrapper { text-align: center; margin-bottom: 60px; }
+
+    .tarifas-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .tarifa-card {
+      background: var(--beige);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .tarifa-card:hover {
+      border-color: var(--verde-claro);
+      transform: translateY(-4px);
+    }
+
+    .tarifa-card.destacado {
+      background: var(--verde);
+      color: white;
+      grid-column: span 2;
+      padding: 50px;
+    }
+
+    .tarifa-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--verde);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .tarifa-card.destacado .tarifa-label { color: var(--verde-suave); }
+
+    .tarifa-precio {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      color: var(--marron);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .tarifa-card.destacado .tarifa-precio { color: white; }
+
+    .tarifa-precio sup {
+      font-size: 1.4rem;
+      vertical-align: super;
+    }
+
+    .tarifa-unidad {
+      font-size: 0.85rem;
+      color: var(--texto-suave);
+      margin-bottom: 20px;
+    }
+
+    .tarifa-card.destacado .tarifa-unidad { color: rgba(255,255,255,0.7); }
+
+    .tarifa-desc {
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+      line-height: 1.6;
+    }
+
+    .tarifa-card.destacado .tarifa-desc { color: rgba(255,255,255,0.85); }
+
+    .tarifa-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 14px;
+      color: white;
+    }
+
+    /* ===== CTA FINAL ===== */
+    #cta-final {
+      padding: 120px 20px;
+      background: linear-gradient(135deg, #2d4a1e 0%, #4a6e35 50%, #3a5228 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' stroke='rgba(255,255,255,0.03)' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 100px 100px;
+    }
+
+    .cta-inner { position: relative; }
+
+    #cta-final .sec-label { color: rgba(255,255,255,0.6); }
+    #cta-final .sec-label::before, #cta-final .sec-label::after { color: rgba(255,255,255,0.3); }
+
+    #cta-final .sec-title {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    #cta-final p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto 44px;
+    }
+
+    .cta-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 20px 50px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 12px 40px rgba(37,211,102,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-wa-btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 55px rgba(37,211,102,0.5);
+    }
+
+    .cta-info {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .cta-info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--texto);
+      padding: 50px 20px 30px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--beige);
+      margin-bottom: 14px;
+    }
+
+    .footer-dir {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--verde-claro); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+    }
+
+    /* ===== WA FLOTANTE ===== */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+      text-decoration: none;
+      transition: transform 0.3s;
+      animation: pulse-wa 2.5s infinite;
+    }
+
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ===== ANIMACIONES ===== */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.45); }
+      50% { box-shadow: 0 8px 45px rgba(37,211,102,0.7); }
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+
+      .nav-links {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: var(--blanco);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        display: none;
+        z-index: 90;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { color: var(--texto) !important; font-size: 1.1rem !important; }
+      .hamburger { display: flex; z-index: 101; }
+
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid .g-item.large { grid-column: span 2; }
+
+      .ubicacion-inner { grid-template-columns: 1fr; }
+      .mapa-wrap { height: 280px; }
+
+      .tarifas-container { grid-template-columns: 1fr; }
+      .tarifa-card.destacado { grid-column: span 1; }
+
+      .hero-btns { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid .g-item.large { grid-column: span 1; aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#hero" class="nav-logo">La Koslayna</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#experiencia" onclick="closeMenu()">Nosotros</a></li>
+      <li><a href="#galeria" onclick="closeMenu()">Galería</a></li>
+      <li><a href="#ubicacion" onclick="closeMenu()">Ubicación</a></li>
+      <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
+      <li><a href="#tarifas" onclick="closeMenu()">Tarifas</a></li>
+      <li><a href="https://wa.me/5492664000000?text=Hola!%20Me%20interesa%20reservar%20una%20cabaña%20en%20La%20Koslayna" target="_blank" class="nav-wa">📲 Reservar</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ Juana Koslay · San Luis · Argentina</div>
+      <h1 class="hero-title">Un lugar para <em>desconectar</em><br>y sentirse en familia</h1>
+      <p class="hero-sub">Cabañas amplias y cómodas en medio de la naturaleza serrana.<br>A solo minutos de Potrero de los Funes y sus maravillas.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5492664000000?text=Hola!%20Me%20interesa%20reservar%20una%20cabaña%20en%20La%20Koslayna.%20¿Tienen%20disponibilidad?" target="_blank" class="btn-wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar por WhatsApp
+        </a>
+        <a href="#galeria" class="btn-outline">
+          Ver fotos ↓
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      Descubrir
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="reveal">
+      <div class="sec-label">Nuestra propuesta</div>
+      <h2 class="sec-title">Naturaleza, silencio y el calor del hogar lejos del hogar</h2>
+      <p class="sec-text">En La Koslayna no vendemos habitaciones, ofrecemos experiencias. Despertarte con el sonido del viento entre los árboles. Tomar mate en el parque mientras los chicos juegan libres. Terminar el día al aire libre, sin prisa. Eso es lo que queremos que te lleves.</p>
+    </div>
+    <div class="pilares reveal">
+      <div class="pilar">
+        <div class="pilar-icon">🌿</div>
+        <h4>Entorno natural</h4>
+        <p>Parque amplio con árboles y paisaje serrano que abraza cada cabaña</p>
+      </div>
+      <div class="pilar">
+        <div class="pilar-icon">👨‍👩‍👧‍👦</div>
+        <h4>Ambiente familiar</h4>
+        <p>Espacio seguro para niños, tranquilidad garantizada para los mayores</p>
+      </div>
+      <div class="pilar">
+        <div class="pilar-icon">🏔️</div>
+        <h4>Ubicación privilegiada</h4>
+        <p>A minutos de los circuitos y atractivos naturales más bellos de San Luis</p>
+      </div>
+      <div class="pilar">
+        <div class="pilar-icon">🤝</div>
+        <h4>Atención personal</h4>
+        <p>Te recibimos como en casa, con calidez y predisposición genuina</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="sec-wrapper reveal">
+      <div class="sec-label">Galería</div>
+      <h2 class="sec-title">Mirá dónde vas a estar</h2>
+    </div>
+    <div class="gallery-tabs reveal">
+      <button class="tab-btn active" onclick="filterGallery('all', this)">Todo</button>
+      <button class="tab-btn" onclick="filterGallery('exterior', this)">Exteriores y parque</button>
+      <button class="tab-btn" onclick="filterGallery('interior', this)">Interiores</button>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- EXTERIORES -->
+      <div class="g-item large" data-cat="exterior" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=900&q=80" alt="Parque con cabañas La Koslayna" loading="lazy" />
+        <div class="g-item-overlay"><span>Parque y cabañas</span></div>
+      </div>
+      <div class="g-item" data-cat="exterior" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=600&q=80" alt="Pileta con reposeras" loading="lazy" />
+        <div class="g-item-overlay"><span>Pileta</span></div>
+      </div>
+      <div class="g-item" data-cat="exterior" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1563911302283-d2bc129e7570?w=600&q=80" alt="Exterior cabaña" loading="lazy" />
+        <div class="g-item-overlay"><span>Exterior</span></div>
+      </div>
+      <div class="g-item" data-cat="exterior" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Entorno serrano" loading="lazy" />
+        <div class="g-item-overlay"><span>Entorno natural</span></div>
+      </div>
+      <!-- INTERIORES -->
+      <div class="g-item large" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" alt="Cocina equipada" loading="lazy" />
+        <div class="g-item-overlay"><span>Cocina equipada</span></div>
+      </div>
+      <div class="g-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Habitación principal" loading="lazy" />
+        <div class="g-item-overlay"><span>Dormitorio doble</span></div>
+      </div>
+      <div class="g-item" data-cat="interior" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Living" loading="lazy" />
+        <div class="g-item-overlay"><span>Living</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion">
+    <div class="ubicacion-inner">
+      <div class="ubicacion-text reveal">
+        <div class="sec-label">Dónde estamos</div>
+        <h2 class="sec-title">En el corazón de la sierra puntana</h2>
+        <p>Estamos ubicados sobre la Ruta Provincial 9 km 12,1 (Au. Los Puquios) en Juana Koslay, San Luis. Un punto estratégico que te pone a minutos de los destinos más bellos de la región.</p>
+        <div class="destinos">
+          <div class="destino-item">
+            <div class="ico">🏎️</div>
+            <div class="info">
+              <strong>Potrero de los Funes</strong>
+              <span>Embalse artificial y circuito internacional de carreras · 10 min</span>
+            </div>
+          </div>
+          <div class="destino-item">
+            <div class="ico">🌋</div>
+            <div class="info">
+              <strong>El Volcán</strong>
+              <span>Cascadas y formaciones naturales únicas · 20 min</span>
+            </div>
+          </div>
+          <div class="destino-item">
+            <div class="ico">🌊</div>
+            <div class="info">
+              <strong>El Trapiche</strong>
+              <span>Pueblo serrano con río y naturaleza exuberante · 25 min</span>
+            </div>
+          </div>
+          <div class="destino-item">
+            <div class="ico">🌿</div>
+            <div class="info">
+              <strong>Estancia Grande</strong>
+              <span>Parajes vírgenes y turismo rural auténtico · 30 min</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/5492664000000?text=Hola!%20Quiero%20más%20información%20sobre%20las%20cabañas%20La%20Koslayna" target="_blank" class="btn-wa" style="display:inline-flex;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar disponibilidad
+        </a>
+      </div>
+      <div class="mapa-wrap reveal reveal-delay-2">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.3!2d-66.23!3d-33.24!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDE0JzI0LjAiUyA2NsKwMTMnNDguMCJX!5e0!3m2!1ses!2sar!4v1700000000000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Cabañas La Koslayna, Juana Koslay San Luis">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="sec-wrapper reveal">
+      <div class="sec-label">Comodidades</div>
+      <h2 class="sec-title">Todo lo que necesitás para descansar</h2>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card reveal reveal-delay-1"><span class="s-icon">🏠</span><h4>3 cabañas independientes</h4></div>
+      <div class="servicio-card reveal reveal-delay-2"><span class="s-icon">👨‍👩‍👧</span><h4>Capacidad 4+ personas</h4></div>
+      <div class="servicio-card reveal reveal-delay-3"><span class="s-icon">📶</span><h4>WiFi incluido</h4></div>
+      <div class="servicio-card reveal reveal-delay-4"><span class="s-icon">🚗</span><h4>Cochera privada</h4></div>
+      <div class="servicio-card reveal reveal-delay-1"><span class="s-icon">❄️</span><h4>Aire acondicionado</h4></div>
+      <div class="servicio-card reveal reveal-delay-2"><span class="s-icon">📺</span><h4>Televisión</h4></div>
+      <div class="servicio-card reveal reveal-delay-3"><span class="s-icon">🍳</span><h4>Cocina eléctrica equipada</h4></div>
+      <div class="servicio-card reveal reveal-delay-4"><span class="s-icon">🌡️</span><h4>Agua caliente termotanque</h4></div>
+      <div class="servicio-card reveal reveal-delay-1"><span class="s-icon">🔥</span><h4>Asador individual</h4></div>
+      <div class="servicio-card reveal reveal-delay-2"><span class="s-icon">🌳</span><h4>Parque amplio</h4></div>
+      <div class="servicio-card reveal reveal-delay-3"><span class="s-icon">🏊</span><h4>Pileta con reposeras</h4></div>
+      <div class="servicio-card reveal reveal-delay-4"><span class="s-icon">🧒</span><h4>Espacio seguro para niños</h4></div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section id="resenas">
+    <div class="sec-wrapper reveal">
+      <div class="sec-label">Lo que dicen nuestros huéspedes</div>
+      <h2 class="sec-title">Experiencias reales, palabras genuinas</h2>
+    </div>
+    <div class="resenas-grid">
+      <div class="resena-card reveal reveal-delay-1">
+        <div class="resena-estrellas">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="resena-texto">"Lugar super tranquilo con espacio para poder estar con niños, muy atentos me esperaron y la casa es muy cómoda y cálida."</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">M</div>
+          <div class="resena-autor-info">
+            <strong>Marcela G.</strong>
+            <span>Reseña verificada en Booking.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="resena-card reveal reveal-delay-2">
+        <div class="resena-estrellas">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="resena-texto">"Espaciosa, muuuy limpia, buena ubicación, se respira tranquilidad en el lugar. 10000% recomendable."</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">L</div>
+          <div class="resena-autor-info">
+            <strong>Laura P.</strong>
+            <span>Reseña verificada en Booking.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="resena-card reveal reveal-delay-3">
+        <div class="resena-estrellas">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="resena-texto">"Solo nos quedamos una noche, pero el lugar súper limpio y la señora que nos recibió súper amable y simpática. La cabaña súper cómoda."</p>
+        <div class="resena-autor">
+          <div class="resena-avatar">R</div>
+          <div class="resena-autor-info">
+            <strong>Rodrigo V.</strong>
+            <span>Reseña verificada en Booking.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="booking-badge reveal" style="margin-top:50px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#003580"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7h2v2h-2zm0-10h2v8h-2z"/></svg>
+      Reseñas extraídas de <strong>Booking.com</strong> &nbsp;·&nbsp; Calificación promedio ⭐ 9.5/10
+    </div>
+  </section>
+
+  <!-- TARIFAS -->
+  <section id="tarifas">
+    <div class="sec-wrapper reveal">
+      <div class="sec-label">Tarifas 2026</div>
+      <h2 class="sec-title">Precios claros, sin sorpresas</h2>
+    </div>
+    <div class="tarifas-container">
+      <div class="tarifa-card reveal reveal-delay-1">
+        <span class="tarifa-label">🌿 Marzo especial</span>
+        <div class="tarifa-precio"><sup>$</sup>85.500</div>
+        <div class="tarifa-unidad">por noche · tarifa con 5% de descuento</div>
+        <p class="tarifa-desc">Aprovechá el descuento de temporada durante todo el mes de marzo. Clima ideal, menos turistas, más tranquilidad.</p>
+        <span class="tarifa-badge" style="background:var(--verde-claro);color:white;">5% OFF en marzo</span>
+      </div>
+      <div class="tarifa-card reveal reveal-delay-2">
+        <span class="tarifa-label">📅 Estadías largas</span>
+        <div class="tarifa-precio"><sup>$</sup>85.500</div>
+        <div class="tarifa-unidad">por noche · con descuento por 5+ días</div>
+        <p class="tarifa-desc">¿Pensás quedarte más de 5 días? Accedés automáticamente al descuento especial por estadía extendida.</p>
+        <span class="tarifa-badge" style="background:var(--marron-claro);color:white;">5% OFF por 5+ noches</span>
+      </div>
+      <div class="tarifa-card destacado reveal">
+        <span class="tarifa-label">🏡 Tarifa general</span>
+        <div class="tarifa-precio"><sup>$</sup>90.000</div>
+        <div class="tarifa-unidad">por noche · cabaña completa hasta 4+ personas</div>
+        <p class="tarifa-desc">Incluye todos los servicios: WiFi, cochera, asador, pileta, ropa de cama y toallas. Nada de costos ocultos.</p>
+        <a href="https://wa.me/5492664000000?text=Hola!%20Me%20interesa%20consultar%20disponibilidad%20y%20tarifas%20de%20Cabañas%20La%20Koslayna" target="_blank" class="cta-wa-btn" style="margin-top:24px;padding:14px 34px;font-size:0.95rem;">
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final">
+    <div class="cta-inner reveal">
+      <div class="sec-label">¿Listo para escaparte?</div>
+      <h2 class="sec-title">Tu próxima escapada empieza con un mensaje</h2>
+      <p>Escribinos por WhatsApp y te respondemos en minutos. Te ayudamos a elegir la mejor fecha, la cabaña ideal y a planear tu itinerario en la sierra puntana.</p>
+      <a href="https://wa.me/5492664000000?text=Hola!%20Me%20interesa%20reservar%20en%20Cabañas%20La%20Koslayna.%20¿Tienen%20disponibilidad?" target="_blank" class="cta-wa-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Reservar ahora por WhatsApp
+      </a>
+      <div class="cta-info">
+        <div class="cta-info-item">✓ Respuesta rápida</div>
+        <div class="cta-info-item">✓ Sin pago por adelantado</div>
+        <div class="cta-info-item">✓ 3 cabañas disponibles</div>
+        <div class="cta-info-item">✓ Familias y mascotas bienvenidas</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Cabañas La Koslayna</div>
+    <div class="footer-dir">
+      Ruta Provincial 9 km 12,1 (Au. Los Puquios)<br>
+      Juana Koslay · San Luis · Argentina
+    </div>
+    <div class="footer-links">
+      <a href="#experiencia">Nosotros</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#tarifas">Tarifas</a>
+      <a href="https://wa.me/5492664000000" target="_blank">WhatsApp</a>
+    </div>
+    <p class="footer-copy">© 2026 Cabañas La Koslayna · Juana Koslay, San Luis, Argentina</p>
+  </footer>
+
+  <!-- WA FLOAT -->
+  <a href="https://wa.me/5492664000000?text=Hola!%20Quiero%20consultar%20por%20las%20cabañas%20La%20Koslayna" target="_blank" class="wa-float" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="Foto cabaña La Koslayna" />
+  </div>
+
+  <script>
+    // NAV scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('nav-links').classList.remove('open');
+    }
+
+    // Hero bg animation
+    window.addEventListener('load', () => {
+      document.getElementById('hero-bg').classList.add('loaded');
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // Gallery filter
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.g-item').forEach(item => {
+        const match = cat === 'all' || item.dataset.cat === cat;
+        item.style.display = match ? '' : 'none';
+      });
+    }
+
+    // Lightbox
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
